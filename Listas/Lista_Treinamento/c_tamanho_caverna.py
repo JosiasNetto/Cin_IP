@@ -1,0 +1,5 @@
+L = int(input())
+A = int(input())
+base = (L * L)
+B = (base * A)
+print(B)

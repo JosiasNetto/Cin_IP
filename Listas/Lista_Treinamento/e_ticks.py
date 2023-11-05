@@ -1,0 +1,5 @@
+D = int(input())
+C = int(input())
+ticks = (D * 108000)
+T = (ticks / C)
+print(int(T))
