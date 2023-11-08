@@ -1,7 +1,7 @@
 #Recebendo respostas certas
-resposta_correta_1 = "Stu Macher e Billy Loomis"
-resposta_correta_2 = "Mickey Altieri e Debbie Salt"
-resposta_correta_3 = "Roman Bridger"
+resposta_correta_1 = input()
+resposta_correta_2 = input()
+resposta_correta_3 = input()
 
 #Sequencia de perguntas, onde se estiver correta, imprimi a resposta e vai para a proxima
 #pergunta 1
