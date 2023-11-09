@@ -31,7 +31,7 @@ elif numero == 2:
         lugar_sinal = string_3
     
     elif len(string_1) == len(string_2) and len(string_1) == len(string_3):
-        print("Droga! Ainda não consegui descobrir o local que possui mais sinais desconhecidos! Vou ter que ficar mais um tempo nessa Mansão Mal-Assombrada...")
+        print("(Droga! Ainda não consegui descobrir o local que possui mais sinais desconhecidos! Vou ter que ficar mais um tempo nessa Mansão Mal-Assombrada...)")
         achou_lugar = False
 
 if achou_lugar:
@@ -56,11 +56,11 @@ if not achou_lugar:
         print(lugar_sinal)
 
     elif string_1 == string_2 and string_1 == string_3:
-        print("AAAAAA! Um fantasma me assustou!")
-        print("(Uma mensagem apareceu no monitor que você estava usando. ""Agente, um erro inesperado aconteceu. A EPF contactará você novamente quando tudo estiver funcionando da forma correta. Nosso sistema foi invadido por alguém que se identifica como Hubert P.Enguin"")")
+        print("\"AAAAAA! Um fantasma me assustou!\"")
+        print("(Uma mensagem apareceu no monitor que você estava usando. \"Agente, um erro inesperado aconteceu. A EPF contactará você novamente quando tudo estiver funcionando da forma correta. Nosso sistema foi invadido por alguém que se identifica como Hubert P.Enguin\")")
 #Achado o local com mais sinais, imprimi a mensagem
 if achou_lugar:
-    print("(Ao terminar sua tarefa, uma mensagem apareceu no monitor que você estava usando.\"Muito bem agente. A EPF agradece os seus esforços\"")
+    print("(Ao terminar sua tarefa, uma mensagem apareceu no monitor que você estava usando. \"Muito bem agente. A EPF agradece os seus esforços\")")
 
 #Impressão Final independente de qualquer resultado
 print("(Depois de ler a mensagem, você dormiu. Ao acordar, você não estava mais no CIn de outubro de 2012, mas no CIn de 2023, sem acreditar na situação que vivenciou)")
