@@ -49,7 +49,3 @@ elif nome_antagonista == "Amanda Young" and tipo_armadilha == "Asas de anjo":
     
     elif tempo < 1.5:
         print("Game Over...")
-
-else:
-    exit()
-    

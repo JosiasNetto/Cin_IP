@@ -1,7 +1,7 @@
 #Variaveis principai para o codigo
-quant_musica = int()
-pontos = int()
-frase = str()
+quant_musica = 0
+pontos = 0
+frase = ""
 
 #Recebendo Musica ou frase, e calculando os pontos da plateia dependendo do caso
 while (pontos >= 0 and frase != "long live"):
