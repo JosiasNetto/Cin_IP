@@ -12,7 +12,7 @@ for i in range(numero_versos):
     if i == 0:
         print("Cause, baby, now we've got")
         plateia_frase = input()
-        #Loop para gerar frase toda maiuscula a partir do upper de cada caracter 
+        #Loop para gerar frase toda maiuscula a partir do upper de cada caracter
         for j in plateia_frase:
             frase_maiuscula += j.upper()
         if frase_maiuscula == "BAD BLOOD":
