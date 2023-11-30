@@ -33,21 +33,26 @@ if numero_amigos > 0:
         local_show = ""
         amigo_terminou = False
         ##Loop que representa a quantidade de vezes que um unico amigo procura-ra um ingresso
-        ###O amigo ira procurar, ou ate que ele ache um ingresso, ou ate que ele ache o local, mas nao consiga o ingresso, ou que ele desista falando "end"
+        ###O amigo ira procurar, ou ate que ele ache um ingresso, ou ate que ele ache o local mas nao consiga o ingresso, ou que ele desista falando "end"
         while not amigo_terminou and local_show != "end":            
             valor_ingresso = int(input())
             local_show = input()
+            #Verificando se o ingresso eh em um lugar que joao pode ir
             if local_show == "rio de janeiro" or local_show == "são paulo" or local_show == "buenos aires":
                 print("Consegui um ingresso em um local que João possa ir! Agora temos que ver o preço")
-            
+
+                #Verificando se o valor do ingresso eh possivel com o dinheiro de joao
                 if valor_ingresso <= valor_carteira:
                     print("Consegui o dinheiro! Agora só falta ver a minha colocação na fila dos ingressos...")
                     posicao_fila = int(input())
                     amigo_terminou = True
-        
+
+                    #Verificando a posicao da fila do ingresso, e vendo se ela eh menor que o tempo disponivel no grad        
                     if (posicao_fila / 160) <= tempo_grad:
                         print("ISSOOO, conseguimos um ingresso!!!")
                         numero_ingressos += 1
+                        #Se tudo der certo, ira salvar como ingresso atual
+                        ##Caso achem outro ingresso, ira compara com o ingresso atual, e ver qual tem a menor posicao na fila, quem tiver a menor, se tornara o ingresso compravel
                         if posicao_fila < melhor_posicao_ingresso:
                             melhor_computador_ingresso = i
                             melhor_posicao_ingresso = posicao_fila
@@ -56,6 +61,7 @@ if numero_amigos > 0:
                 else:
                     print("Caramba! Só tinha ingresso para a pista vip, que está bem acima do meu orçamento.")
                     amigo_terminou = True
+    #Checkagem para ver se conseguiram os ingressos
     if numero_ingressos >= 1:
         print(f"Consegui o ingresso! Com {int((numero_ingressos/numero_amigos)*100)}% de aproveitamento da ajuda dos meus amigos. E a fila escolhida para comprar o ingresso foi do computador número {melhor_computador_ingresso}. Rumo ao show da Taylor!!!")
     elif (computadores_disponiveis / 2) < numero_amigos:
