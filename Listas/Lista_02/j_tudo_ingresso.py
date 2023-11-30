@@ -1,3 +1,4 @@
+#Definindo Principais Variaveis Utilizadas no Codigo
 nome_amigo = ""
 local_show = ""
 valor_ingresso = 0
@@ -10,29 +11,35 @@ numero_ingressos = 0
 posicao_fila = 0
 amigo_terminou = False
 
+#Lendo os 3 primeiros inputs dados pelo programa
 computadores_disponiveis = int(input())
 valor_carteira = int(input())
 tempo_grad = int(input())
 
+#Loop para receber o numero de amigos ate que alguem fale que pare ou atinga o numero max de computador
 while nome_amigo != "end" and numero_amigos < computadores_disponiveis:
     nome_amigo = input()
+    ##Checkagem para ver se o nome do amigo pode ajudar, e se nao eh o codigo de parar o loop
     if nome_amigo != "laura" and nome_amigo != "carlos" and nome_amigo != "roberto" and nome_amigo != "end":
         numero_amigos += 1
   
-
+#Checkagem para o programa funcionar apenas se tiver amigos(Achei meio triste)
 if numero_amigos > 0:
     print(f"Bom começo! Consegui {numero_amigos} amigos que podem me ajudar a comprar o ingresso")
     
+    #Loop baseado na quantidade de amigos, onde cada amigo pode procurar o ingresso, mais de uma vez, se o nao tiver achado
     for i in range(1,numero_amigos + 1):
         valor_ingresso = 0
         local_show = ""
         amigo_terminou = False
+        ##Loop que representa a quantidade de vezes que um unico amigo procura-ra um ingresso
+        ###O amigo ira procurar, ou ate que ele ache um ingresso, ou ate que ele ache o local, mas nao consiga o ingresso, ou que ele desista falando "end"
         while not amigo_terminou and local_show != "end":            
             valor_ingresso = int(input())
             local_show = input()
             if local_show == "rio de janeiro" or local_show == "são paulo" or local_show == "buenos aires":
                 print("Consegui um ingresso em um local que João possa ir! Agora temos que ver o preço")
-
+            
                 if valor_ingresso <= valor_carteira:
                     print("Consegui o dinheiro! Agora só falta ver a minha colocação na fila dos ingressos...")
                     posicao_fila = int(input())
