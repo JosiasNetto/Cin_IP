@@ -21,7 +21,7 @@ for i in range(numero_versos):
     
     elif i == 1:
         print("You know it used to be")
-        plateia_frase = input().upper()
+        plateia_frase = input()
         for j in plateia_frase:
             frase_maiuscula += j.upper()
         if frase_maiuscula == "MAD LOVE":
@@ -30,7 +30,7 @@ for i in range(numero_versos):
 
     elif i == 2:
         print("So take a look what")
-        plateia_frase = input().upper()
+        plateia_frase = input()
         for j in plateia_frase:
             frase_maiuscula += j.upper()
         if frase_maiuscula == "YOU'VE DONE":
@@ -39,7 +39,7 @@ for i in range(numero_versos):
     
     elif i == 3:
         print("Cause, baby, now we've got")
-        plateia_frase = input().upper()
+        plateia_frase = input()
         for j in plateia_frase:
             frase_maiuscula += j.upper()
         if frase_maiuscula == "BAD BLOOD, HEY":
