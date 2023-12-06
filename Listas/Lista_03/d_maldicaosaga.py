@@ -1,0 +1,1 @@
+colecao_sergio = input().split(", ")
