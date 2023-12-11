@@ -25,3 +25,4 @@ if achou_reliquia:
 
 else:
     print("Nenhuma relíquia encontrada no labirinto.")
+
