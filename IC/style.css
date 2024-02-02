@@ -1,0 +1,27 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.Caixa{
+    width: 100%;
+    height: 20vh;
+    background-color: cadetblue;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.Logo{
+    width: 10%;
+    border-radius: 50%;
+    border: 2px solid black;
+}
+
+.Almoco{
+    width: 500px;
+}
+
+.Lista {
+    background-color: red;
+    
+}
