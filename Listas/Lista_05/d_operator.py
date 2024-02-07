@@ -22,4 +22,27 @@ def loop_binarios(num_binarios,lista_decimais):
 
     return lista_decimais
 
-def decodificando_decimais(lista_decimais_completa):
+def decodificando_decimais(lista_decimais_completa,lista_decodificada):
+
+    if len(lista_decimais_completa) > 0:
+        lista_decodificada.append(chr(lista_decimais_completa[0]))
+        lista_decimais_completa.pop(0)
+        decodificando_decimais(lista_decimais_completa,lista_decodificada)
+    
+    else:
+        lista_decodificada = []
+    
+    return lista_decodificada
+
+
+def main():
+    sequencia_binario = input().split(' ')
+    lista_aux = []
+    lista_decimais = loop_binarios(sequencia_binario,lista_aux)
+
+    lista_aux = []
+    lista_decodificados = decodificando_decimais(lista_decimais,lista_aux)
+
+    print(f'Os códigos da Matrix indicam que {"".join(lista_decodificados)} está perto.')
+
+main()
