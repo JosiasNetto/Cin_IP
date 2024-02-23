@@ -1,10 +1,13 @@
-def num_pedidos(pedido, comidas):
+def num_pedidos(pedido, comidas, qtd_preco_ingredientes):
     if 'qtd_pedidos' in comidas[pedido]:
         comidas[pedido].update({'qtd_pedidos' : comidas[pedido]['qtd_pedidos'] + 1})
                 
     else:
         comidas[pedido].update({'qtd_pedidos' : 1})
 
+    #for i in comidas[pedido]['ingredientes']:
+       #qtd_preco_ingredientes.update({pedido : {})
+        #Updatar qtd ingrediente do dic de ingredientes
     return
 
 def calc_pedidos_inexistentes(pedido, comidas_inexistentes_pedido):
@@ -34,19 +37,14 @@ def gerando_comida_nova(pedido, comidas, qtd_preco_ingredientes):
   return
 
 def calc_lucro(pedido, comidas):
-   custo = comidas.get(pedido['preco'])
+   custo = comidas[pedido]['preco']
 
    return custo
 
 def calc_mais_pedido(pedido, comidas, mais_pedido, num_mais_pedido):
-  if 'qtd_pedidos' in comidas[pedido]:
-    comidas[pedido]['qtd_pedidos'] += 1
-  else:
-    comidas[pedido]['qtd_pedidos'] = 1
-
   for i in comidas:
-     if i['qtd_pedidos'] > num_mais_pedido:
-        num_mais_pedido = i['qtd_pedidos']
+     if comidas[i].get('qtd_pedidos', 0) > num_mais_pedido:
+        num_mais_pedido = comidas[i].get('qtd_pedidos', 0)
         mais_pedido = pedido
 
   return mais_pedido, num_mais_pedido
@@ -100,4 +98,10 @@ def main():
   print(f'O lucro obtido no dia de hoje foi de R${lucro:.2f}.')
 
   if mais_pedido == 'bobo de camarao':
-     print(f'O bom e tradicional Bobó de Camarão, líder em vendas, nunca será superado! ')
+     print(f'O bom e tradicional Bobó de Camarão, líder em vendas, nunca será superado!')
+
+  else:
+     print(f'{mais_pedido.capitalize()} está fazendo sucesso entre os clientes, ultrapassando até mesmo o lendário Bobó de Camarão.')
+
+
+main()
