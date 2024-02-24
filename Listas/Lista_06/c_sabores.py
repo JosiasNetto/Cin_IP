@@ -5,9 +5,9 @@ def num_pedidos(pedido, comidas, qtd_preco_ingredientes):
     else:
         comidas[pedido].update({'qtd_pedidos' : 1})
 
-    #for i in comidas[pedido]['ingredientes']:
-       #qtd_preco_ingredientes.update({pedido : {})
-        #Updatar qtd ingrediente do dic de ingredientes
+    for i in comidas[pedido]['ingredientes']:
+       qtd_preco_ingredientes[i].update({'qtd' : qtd_preco_ingredientes[i]['qtd'] - 1})
+        
     return
 
 def calc_pedidos_inexistentes(pedido, comidas_inexistentes_pedido):
@@ -53,7 +53,7 @@ def calc_mais_pedido(pedido, comidas, mais_pedido, num_mais_pedido):
 
 def main():
 
-  comidas = {'bobo de camarao' : {'ingedientes' : ('camarao', 'macaxeira', 'leite de coco', 'dende', 'tomate', 'cebola'), 'preco' : 58}, 
+  comidas = {'bobo de camarao' : {'ingredientes' : ('camarao', 'macaxeira', 'leite de coco', 'dende', 'tomate', 'cebola'), 'preco' : 58}, 
     'tapioca de carne de sol' : {'ingredientes' :('massa de tapioca', 'carne de sol', 'queijo coalho', 'tomate', 'cebola'), 'preco' : 60},
     'carne de sol com macaxeira' : {'ingredientes' : ('carne de sol', 'macaxeira', 'manteiga'), 'preco' : 38.50}, 
     'camarao na moranga' : {'ingredientes' : ('moranga', 'camarao', 'cebola', 'alho', 'tomate', 'pimentao', 'creme de leite', 'azeite', 'coentro'), 'preco' : 68.50}}
@@ -76,7 +76,7 @@ def main():
       try:
         pedido = input()
         if pedido in comidas:
-          num_pedidos(pedido, comidas)
+          num_pedidos(pedido, comidas, qtd_preco_ingredientes)
           print(f'{pedido} saindo...')
           lucro += calc_lucro(pedido, comidas)
           mais_pedido, num_mais_pedido = calc_mais_pedido(pedido, comidas, mais_pedido, num_mais_pedido)
