@@ -1,8 +1,3 @@
-10
-10
-10
-2
-joca
-20
-20
-20
+dic = {'joao': 'bETO', 'JAPA' : 'GAY'}
+dic = sorted(dic.items(), key = lambda item : item[1])
+print(dic)
